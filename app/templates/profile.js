@@ -1,6 +1,6 @@
 module.exports = function (req) {
-    return  {
-        'html': 
+    return {
+        'html':
         `<!doctype html>
             <html>
                 <head>
@@ -23,9 +23,9 @@ module.exports = function (req) {
                                 <div class="well">
                                     <h3><span class="fa fa-user"></span> Local</h3>
                                         <p>
-                                            <strong>id</strong>: ${ req.user._id }<br>
-                                            <strong>email</strong>: ${ req.user.local.email }<br>
-                                            <strong>password</strong>: ${ req.user.local.password }
+                                            <strong>id</strong>: ${ req.user._id}<br>
+                                            <strong>email</strong>: ${ req.user.local.email}<br>
+                                            <strong>password</strong>: ${ req.user.local.password}
                                         </p>
                                 </div>
                             </div>
