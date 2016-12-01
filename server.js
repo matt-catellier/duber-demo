@@ -1,6 +1,4 @@
-// server.js
-
-// set up ======================================================================
+var path = require('path');
 var express = require('express');
 var app = express();
 var port = process.env.PORT || 8080;
@@ -26,6 +24,7 @@ require('./config/passport')(passport); // pass passport for configuration
 // set up our express application
 app.use(morgan('dev')); // log every request to the console
 app.use(cookieParser()); // read cookies 
+app.use(express.static( path.join(__dirname, '/app/public')));
 app.use(bodyParser()); // get information from html forms
 
 // set up passport // CHANGE TO SALT!!!!
