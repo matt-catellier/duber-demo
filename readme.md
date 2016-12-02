@@ -1,4 +1,6 @@
 # Duber Code Interview
+Created using Exress and MongDB as back-end, and jQuery and Bootstrap for front-end <br >
+Perform user login/registration described [here](https://gist.github.com/ogryzek/bd10df6d8e238e64dcde9d219e02d42e)
 
 ## Onboarding
 
