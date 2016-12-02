@@ -48,10 +48,11 @@
             height: 20px;
             padding: 5px;
         }
-
+        
         label {
             display: block;
         }
+        
         .form-control {
             display: inline-block;
         }
@@ -78,9 +79,10 @@
 
                 <div class="form-group">
                     <label>Confirm Password</label>
-                    <input id="passwordConfirm" type="password" class="form-control" name="passwordConfirm"> <span id="validPassConfirm" class="valid-status"></span>
+                    <input id="passwordConfirm" type="password" class="form-control" name="passwordConfirm"> <span id="validPassConfirm"
+                        class="valid-status"></span>
                 </div>
-                <button id="submit" type="submit" class="btn btn-warning btn-lg">Login</button>
+                <button id="submit" type="submit" class="btn btn-warning btn-lg">Register</button>
                 <div class="error">
                     <p class="errorMsg red"></p>
                 </div>
@@ -139,12 +141,13 @@ $(document).ready(function () {
             data : $('form').serialize(),
             success: function(res)
             {
-                console.log(res);
+                if(!res.success) {
+                    $('.errorMsg').text('*** ' + res.message).fadeIn(1000);
+                } else {
+                    window.location.href = res.url;
+                }
             },
-            error: function (err)
-            {
-        
-            }
+            error: function (err){ console.log(err) }
         });
     });
 

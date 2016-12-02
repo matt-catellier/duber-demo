@@ -45,9 +45,9 @@ module.exports = function (passport) {
         }));
 
     // =========================================================================
-    // LOCAL SIGNUP ============================================================
+    // LOCAL REGISTER ============================================================
     // =========================================================================
-    passport.use('local-signup', new LocalStrategy({
+    passport.use('local-register', new LocalStrategy({
         // by default, local strategy uses username and password, we will override with email
         usernameField: 'email',
         passwordField: 'password',
@@ -55,14 +55,16 @@ module.exports = function (passport) {
     },
         function (req, email, password, done) {
             process.nextTick(function () { // wont fire unless data is sent back
-
+                if(password != req.body.passwordConfirm) {
+                    return done(null, false,  {'message': 'Passwords must match.'});
+                }
                 // find a user whose email is the same as the forms email
                 // we are checking to see if the user trying to login already exists
                 User.findOne({ 'local.email': email }, function (err, user) {
                     // if there are any errors, return the error
                     if (err)
                         return done(err);
-
+                    
                     // check to see if theres already a user with that email
                     if (user) {
                         return done(null, false,  {'message': 'Invalid email.  Try another.'});

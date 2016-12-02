@@ -41,15 +41,22 @@ module.exports = function (app, passport) {
     });
 
     app.post('/register', function(req,res, next) {
-        passport.authenticate('local-signup',function(err, user, info) {
-            if(err) {
-                res.send(JSON.stringify(err.message));
-            } 
-            if(!user) {
-
+        passport.authenticate('local-register', function(err, user, info) {
+            if (err) {
+                return next(err); // will generate a 500 error
             }
-            res.redirect('/profile');
-        })
+            if (! user) {
+                return res.send({ success : false, message : info.message});
+            }
+            // attemps to login via passprt?
+            req.login(user, loginErr => {
+                if (loginErr) { 
+                    return next(loginErr);
+                } 
+                return res.send({ success : true, url : '/profile' });
+            });  
+            
+        })(req, res, next); 
     });
 
     app.get('/profile', isLoggedIn, function (req, res) {
