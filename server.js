@@ -25,12 +25,12 @@ app.use(cookieParser()); // read cookies
 app.use(express.static( path.join(__dirname, '/app/public')));
 app.use(bodyParser()); // get information from html forms
 
-// set up passport 
 app.use(session({ secret: '#$%8909809890890sdafds98#$%$@@' })); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
 require('./app/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
-app.get('*', function (req, res) { res.redirect('/'); });
+app.get('*', function (req, res) { res.redirect('/'); }); // catchall route
+
 app.listen(port);
 console.log('The server running on port ' + port);
