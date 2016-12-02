@@ -108,6 +108,7 @@ $(document).ready(function () {
     errorMsg.hide();
 
     $("#submit").click(function (e) {
+        e.preventDefault();
         resetFields();
         var emptyfields = $("#email, #password, #passwordConfirm");
         emptyfields.each(function () {
@@ -126,12 +127,25 @@ $(document).ready(function () {
         validatePasswordConfirm()
 
         if (error) {
-            e.preventDefault();
-            errorMsg.show()
+            // e.preventDefault();
+            errorMsg.fadeIn(1000);
         } else {
             errorMsg.hide()
         }
         error = false;
+        $.ajax({
+            url : "/register",
+            type: "POST",
+            data : $('form').serialize(),
+            success: function(res)
+            {
+                console.log(res);
+            },
+            error: function (err)
+            {
+        
+            }
+        });
     });
 
     // give immediate email validation feedback

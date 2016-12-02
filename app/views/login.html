@@ -101,6 +101,7 @@
             errorMsg.hide();
 
             $("#submit").click(function (e) {
+                e.preventDefault();
                 resetFields();
                 var emptyfields = $("#email, #password, #passwordConfirm");
                 emptyfields.each(function () {
@@ -115,19 +116,33 @@
                 });
 
                 if(error) {
-                    e.preventDefault();
                     errorMsg.text("*** Missing required fields").fadeIn(1000);
                     return;
                 }
 
                 error = isFormDataValid();
                 if (!error.dataIsValid) {
-                    e.preventDefault();
                     $('.errorMsg').text('*** ' + error.message).fadeIn(1000);
+                    return;
                 } else {
                     errorMsg.hide()
                 }
                 error = false;
+                // do ajax so can post data after..??
+                $.ajax({
+                    url : "/login",
+                    type: "POST",
+                    data : $('form').serialize(),
+                    success: function(res)
+                    {
+                        if(!res.success) {
+                            $('.errorMsg').text('*** ' + res.message).fadeIn(1000);
+                        } else {
+                            window.location.href = res.url;
+                        }
+                    },
+                    error: function (err){ console.log(err) }
+                });
             });
 
             $("#email").blur(function () {
