@@ -11,5 +11,11 @@ Perform user login/registration described [here](https://gist.github.com/ogryzek
 5. npm install 
 6. mongod (start mongoDB)
 7. create a database called duber (i.e.'mongodb://localhost:27017/duber')
-5. npm start
-6. http://localhost:8080/
+8. npm start
+9. http://localhost:8080/
+
+NOTE:
+* starter implemennting react routing in process/ and builds/ - 'gulp' localhost:8000 (only routing)
+* existing node ad jQuery app lives in app/ config/ and database/ - 'npm start'  localhost:8080 (Node & jQuery)
+* to test react routing run gulp to see set up
+* still need to link to existing app, refactor jQuery to React methods
