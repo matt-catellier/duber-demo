@@ -8,7 +8,7 @@ var FooterComponent = require('./FooterComponent');
 
 ReactDOM.render(
   <NavbarComponent 
-    showUserName={false} />,
+    showUserName={true} />,
     document.getElementById('navComponent')
 ); 
 ReactDOM.render(

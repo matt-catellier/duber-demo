@@ -1,4 +1,6 @@
 var React = require('react');
+var browserHistory = require('react-router').browserHistory;
+
 
 var ListComponent = React.createClass({
     render: function() {
@@ -6,7 +8,7 @@ var ListComponent = React.createClass({
 			display: this.props.visible ? 'block' : 'none'
 		}
     return (
-        <div className="jumbotron text-center col-xs-12 col-sm-6 col-sm-offset-3">
+        <div className="jumbotron text-center col-xs-12 col-md-6 col-md-offset-3">
             <h2><span className="fa fa-lock"></span> Duber Challenge</h2>
             <p> Created using Exress and MongDB as back-end, and jQuery and Bootstrap for front-end </p>
             <p>Perform user login/registration described <a href="https://gist.github.com/ogryzek/bd10df6d8e238e64dcde9d219e02d42e">here.</a> </p>

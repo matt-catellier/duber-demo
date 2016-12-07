@@ -6,6 +6,7 @@ var browserHistory = require('react-router').browserHistory;
 
 var LandingComponent = require('./LandingComponent');
 var LoginComponent = require('./LoginComponent');
+var RegisterComponent = require('./RegisterComponent');
 var ListComponent = require('./ListComponent');
 
 var MainComponent = React.createClass({
@@ -16,11 +17,6 @@ var MainComponent = React.createClass({
 			users: []
 		} //return
 	}, //getInitialState,
-	toggleLogin: function() {
-		this.setState({
-			login: !this.state.login
-		}); //setState
-	}, //toggleLoginForm
 	handleLogin: function(formData) { // couldn't call within React.createFactory
 		var tempUsers = this.state.users;
 		if(tempUsers.length > 0) {
@@ -79,12 +75,13 @@ var MainComponent = React.createClass({
 					/>	
 			)} //render
 		}) //createClass
-	), // createFactory
+	), // loginWrapper
 	render: function() {
 		return(
 			<Router className='app-interface' history={browserHistory}>
 				<Route path="/" component={LandingComponent}/>
 				<Route path="/login" component={this.loginWrapper}/>
+				<Route path="/register" component={RegisterComponent}/>
 				<Route path="/list" component={this.listWrapper} />
 				<Route path="/*" component={LandingComponent}/>
 			</Router>			
