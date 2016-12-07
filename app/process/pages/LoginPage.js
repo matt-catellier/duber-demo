@@ -1,16 +1,16 @@
 var React = require('react');
 var browserHistory = require('react-router').browserHistory;
+var login = require('../scripts/login');
 
 var LoginPage = React.createClass({	
 	handleSubmit: function() {
 		var formData = {
 			email: this.refs.inputEmail.value,
-			password: this.refs.inputPassword.value,
-			valid: 0,
-			invalid: 0
+			password: this.refs.inputPassword.value
 		}
-		// console.log(formData);
-		this.props.handleLogin(formData);
+		console.log(formData);
+		login.submit(formData);
+		// this.props.handleLogin(formData);
 	},
 	render: function() {
 		var padding10 = {

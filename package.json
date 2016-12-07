@@ -4,7 +4,7 @@
   "description": "User signup/login using node, mongo and jquery",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon ./app/server.js",
+    "start": "nodemon ./server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Matt Catellier",

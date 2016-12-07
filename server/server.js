@@ -22,14 +22,15 @@ require('./config/passport')(passport); // pass passport for configuration
 
 app.use(morgan('dev')); // log every request to the console
 app.use(cookieParser()); // read cookies 
-app.use(express.static( path.join(__dirname, '/app/public')));
+// app.use(express.static( path.join(__dirname, '/public')));
 app.use(bodyParser()); // get information from html forms
 
 app.use(session({ secret: '#$%8909809890890sdafds98#$%$@@' })); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
-require('./routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
+app.use('/', express.static('public'))
+require('./routes')(app, passport); // load our routes and pass in our app and fully configured passport
 app.get('*', function (req, res) { res.redirect('/'); }); // catchall route
 
 app.listen(port);

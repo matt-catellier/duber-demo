@@ -46,32 +46,11 @@ var MainComponent = React.createClass({
 	}, // toggleList	
 	loginWrapper: React.createFactory(
 		React.createClass({
-			render: function() { return(
+			render: function() { 
+				var _this = this;
+				return(
 					<LoginPage 
-						handleLogin={this.handleLogin}
 						toggleList={this.toggleList}
-						handleLogin={ function() {
-							var tempUsers = this.state.users;
-							if(tempUsers.length > 0) {
-								tempUsers.forEach(function(user) {
-									if (formData.email === user.email && formData.password === user.password) {
-										user.valid += 1;	
-									} else if (formData.email === user.email && formData.password !== user.password) {
-										user.invalid += 1;		
-									} else {
-										tempUsers.push(formData);
-									}	
-									this.setState({
-										users: tempUsers
-									});	//setState
-								}, this);		
-							} else {
-								tempUsers.push(formData);
-								this.setState({
-									users: tempUsers
-								});	//setState
-							}				
-						}}
 					/>	
 			)} //render
 		}) //createClass
@@ -80,7 +59,7 @@ var MainComponent = React.createClass({
 		return(
 			<Router className='app-interface' history={browserHistory}>
 				<Route path="/" component={LandingPage}/>
-				<Route path="/login" component={this.loginWrapper}/>
+				<Route path="/login" component={LoginPage}/>
 				<Route path="/register" component={RegisterPage}/>
 				<Route path="/list" component={this.listWrapper} />
 				<Route path="/*" component={LandingPage}/>

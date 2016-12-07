@@ -52,6 +52,7 @@ header .navbar-header .navbar-toggle {
 
 .main .red {
   background-color: #d9534f;
+  color: white;
 }
 
 .main .green {
@@ -78,20 +79,6 @@ input[type="email"] {
     border-radius: 5px;
 }
 
-.required {
-    border: solid 1px #f00
-}
-
-.red {
-    color: #f00;
-}
-
-.error {
-    display: inline-block;
-    height: 20px;
-    padding: 5px;
-}
-
 label {
     display: block;
 }
@@ -112,8 +99,6 @@ input[type="text"], input[type="password"], input[type="email"] {
 .error {
     display: inline-block;
     height: 20px;
-    margin-left: 220px;
-
 }
 
 .attempts-list {
@@ -135,11 +120,11 @@ input[type="text"], input[type="password"], input[type="email"] {
 
 
 .red {
-    color: #f00;
+    color: #d9534f;
 }
 
 .required {
-    border: solid 1px #f00
+    border: solid 1px #d9534f;
 }
 
 .button {
