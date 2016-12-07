@@ -76,11 +76,6 @@ input[type="email"] {
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px;
-    /* future proofing */
-    -khtml-border-radius: 5px;
-    /* for old Konqueror browsers */
-    width: 300px;
-    padding: 5px;
 }
 
 .required {
@@ -112,10 +107,6 @@ input[type="text"], input[type="password"], input[type="email"] {
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px; /* future proofing */
-    -khtml-border-radius: 5px; /* for old Konqueror browsers */
-
-    width: 300px;
-    padding: 5px;
 }
 
 .error {
@@ -136,15 +127,6 @@ input[type="text"], input[type="password"], input[type="email"] {
         padding: 15px 0;
         overflow: hidden;
     }
-}
-
-label {
-    display: inline-block;
-    font-weight: bold;
-    font-size: 14px;
-    margin: 5px 0 0 20px;
-    width: 200px;
-    vertical-align: top;
 }
 
 .captcha {

@@ -27,19 +27,19 @@ var LoginPage = React.createClass({
 						<div className="form-group">
 							<label> Email </label>
 							<input type="text" className="form-control" ref="inputEmail" placeholder="email@gmail.com" />
-							 <span id="validEmail" class="valid-status"></span>
+							 <span id="validEmail" className="valid-status"></span>
 						</div>
 						<div className="form-group">
 							<label> Password </label>
 							<input type="password" className="form-control" ref="inputPassword" placeholder="123456" />
-							<span id="validPassword" class="valid-status"></span>
+							<span id="validPassword" className="valid-status"></span>
 						</div>
 						<div className="form-group">
 							<div className="btn btn-primary" onClick={ this.handleSubmit }> Login </div>
 							<a href="#" style={padding10} onClick={this.props.toggleList}> Show login attempts? </a>
 						</div>
-						 <div class="error">
-							<p class="errorMsg red"></p>
+						 <div className="error">
+							<p className="errorMsg red"></p>
 						</div>
 					</div>
 				</div>

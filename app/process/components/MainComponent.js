@@ -4,10 +4,10 @@ var Route = require('react-router').Route;
 var Link = require('react-router').Link;
 var browserHistory = require('react-router').browserHistory;
 
-var LandingComponent = require('./LandingComponent');
-var LoginComponent = require('./LoginComponent');
-var RegisterComponent = require('./RegisterComponent');
-var ListComponent = require('./ListComponent');
+var LandingPage = require('../pages/LandingPage');
+var LoginPage = require('../pages/LoginPage');
+var RegisterPage = require('../pages/RegisterPage');
+var ListComponent = require('../pages/ListPage');
 
 var MainComponent = React.createClass({
 	getInitialState: function() {
@@ -47,7 +47,7 @@ var MainComponent = React.createClass({
 	loginWrapper: React.createFactory(
 		React.createClass({
 			render: function() { return(
-					<LoginComponent 
+					<LoginPage 
 						handleLogin={this.handleLogin}
 						toggleList={this.toggleList}
 						handleLogin={ function() {
@@ -79,11 +79,11 @@ var MainComponent = React.createClass({
 	render: function() {
 		return(
 			<Router className='app-interface' history={browserHistory}>
-				<Route path="/" component={LandingComponent}/>
+				<Route path="/" component={LandingPage}/>
 				<Route path="/login" component={this.loginWrapper}/>
-				<Route path="/register" component={RegisterComponent}/>
+				<Route path="/register" component={RegisterPage}/>
 				<Route path="/list" component={this.listWrapper} />
-				<Route path="/*" component={LandingComponent}/>
+				<Route path="/*" component={LandingPage}/>
 			</Router>			
 		) //return
 	} //render

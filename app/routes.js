@@ -1,33 +1,18 @@
-var root = { root: './app/views' };
-
 module.exports = function (app, passport) {
-
-    app.get('/', function (req, res) {
-        res.sendfile('index.html', root);
-    });
-
-    app.get('/login', function (req, res) {
-        res.sendfile('login.html', root);
-    });
-
-    app.post('/login', function(req,res,next) {
+    
+    app.post('/api/login', function(req,res,next) {
         passportAuthenticate('local-login', req,res,next, passport);
     })
-    
-    
-    app.get('/register', function (req, res) {
-        res.sendfile('register.html', root);
-    });
 
-    app.post('/register', function(req,res, next) {
+    app.post('/api/register', function(req,res, next) {
         passportAuthenticate('local-register',req,res,next,passport);
     });
 
-    app.get('/profile', isLoggedIn, function (req, res) {
+    app.get('/api/profile', isLoggedIn, function (req, res) {
         res.send(require('./templates/profile')(req).html);
     });
 
-    app.get('/logout', function (req, res) {
+    app.get('/api/logout', function (req, res) {
         req.logout();
         res.redirect('/');
     });

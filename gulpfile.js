@@ -3,11 +3,11 @@ var gulp = require('gulp'),
     webserver = require('gulp-webserver'),
     sass = require('gulp-sass');
 
-var src = './process',
+var src = './app/process',
     app = './builds/app';
 
 gulp.task('js', function() {
-  return gulp.src( src + '/js/app.js' )
+  return gulp.src( src + '/app/app.js' )
     .pipe(browserify({
       transform: 'reactify',
       debug: true
