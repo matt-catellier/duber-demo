@@ -2,15 +2,6 @@ var React = require('react');
 var browserHistory = require('react-router').browserHistory;
 
 const NavbarComponent = React.createClass({
-  showLogin: function(e) {
-      alert('login');
-  },
-  showLogin: function(e) {
-      alert('login');
-  },
-  showRegister: function() {
-      alert('register');
-  },
   render() {
     var hamburger = {
         // make background url src="/img/hamburger.gif"
@@ -58,9 +49,9 @@ const NavbarComponent = React.createClass({
             </div>
             <div className="collapse navbar-collapse navbar-left">
                 <ul className="nav navbar-nav pull-left">
-                    <li><a onClick={(e) => browserHistory.push('login') }>Login</a>
+                    <li><a onClick={(e) => browserHistory.push('/') }>Home</a>
                     </li>
-                    <li><a onClick={(e) => browserHistory.push('list') }> List </a>
+                    <li><a onClick={(e) => browserHistory.push('login') }>Login</a>
                     </li>
                     <li><a onClick={(e) => browserHistory.push('register') }> Register </a>
                     </li>

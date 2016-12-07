@@ -4,6 +4,7 @@ var Route = require('react-router').Route;
 var Link = require('react-router').Link;
 var browserHistory = require('react-router').browserHistory;
 
+var LandingComponent = require('./LandingComponent');
 var LoginComponent = require('./LoginComponent');
 var ListComponent = require('./ListComponent');
 
@@ -82,10 +83,10 @@ var MainComponent = React.createClass({
 	render: function() {
 		return(
 			<Router className='app-interface' history={browserHistory}>
-				<Route path="/" component={this.loginWrapper}/>
+				<Route path="/" component={LandingComponent}/>
 				<Route path="/login" component={this.loginWrapper}/>
 				<Route path="/list" component={this.listWrapper} />
-				<Route path="/*" component={this.loginWrapper}/>
+				<Route path="/*" component={LandingComponent}/>
 			</Router>			
 		) //return
 	} //render
