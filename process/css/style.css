@@ -1,0 +1,204 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800|Roboto+Slab:400,100,300,700);
+
+/**  Basic Page CSS **/
+body{
+  font-family: "Roboto Slab", sans-serif;
+  font-weight: 300;
+  font-size: 2em;
+  position: relative;
+  background-color: #337ab7;
+  font-size: 16px;
+  width: 100%;
+  min-width: 360px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 100;
+  margin: 10px 0 10px 0;
+}
+
+/**  Header Navigation **/
+
+header .navbar {
+  margin-bottom: 0;
+  border: none;
+  border-radius: 0;
+  padding: 10px 0;
+  color: white;
+}
+
+header .navbar-header .navbar-toggle {
+  margin-left: 15px;
+}
+
+/**  Main Area **/
+.main {
+  background: white;
+  margin-top: 72px;
+  padding: 30px 0;
+}
+
+.main .circle {
+  width: 2em;
+  height: 2em;
+  padding: 0.25em;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  color: white;
+  text-align: center;
+  font-size: 1em;
+  display: inline-block
+}
+
+.main .red {
+  background-color: #d9534f;
+}
+
+.main .green {
+  background-color: #5cb85c;
+}
+
+/** LOGIN PAGE **/
+.valid-status {
+    position: absolute;
+    display: inline-block;
+    margin-left: 5px;
+    margin-top: 5px;
+    width: 16px;
+    height: 16px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    /*display: inline-block;*/
+    position: relative;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    /* future proofing */
+    -khtml-border-radius: 5px;
+    /* for old Konqueror browsers */
+    width: 300px;
+    padding: 5px;
+}
+
+.required {
+    border: solid 1px #f00
+}
+
+.red {
+    color: #f00;
+}
+
+.error {
+    display: inline-block;
+    height: 20px;
+    padding: 5px;
+}
+
+label {
+    display: block;
+}
+
+.form-control {
+    display: inline-block;
+}
+
+/* Form and error message styling */
+input[type="text"], input[type="password"], input[type="email"] {
+    display: inline-block;
+    position: relative;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; /* future proofing */
+    -khtml-border-radius: 5px; /* for old Konqueror browsers */
+
+    width: 300px;
+    padding: 5px;
+}
+
+.error {
+    display: inline-block;
+    height: 20px;
+    margin-left: 220px;
+
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+ul li {
+    border-bottom: 1px solid #DFDFDF;
+    width: 600px;
+    padding: 15px 0;
+    overflow: hidden;
+}
+
+label {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 14px;
+    margin: 5px 0 0 20px;
+    width: 200px;
+    vertical-align: top;
+}
+
+.captcha {
+    display:inline-block;
+}
+
+
+.red {
+    color: #f00;
+}
+
+.required {
+    border: solid 1px #f00
+}
+
+.button {
+    border-bottom: none;
+}
+
+/**  Footer **/
+footer {
+  background: #337ab7;
+  color: white;
+  font-size: .8em;
+  padding: 20px 0 40px 0;
+}
+
+footer a {
+  color: #E0E6AE;
+}
+
+footer a:hover {
+  color: #EEC856 !important;
+}
+
+footer .phone {
+  font-size: 1.4em;
+  font-weight: 700;
+  color: #E0E6AE;
+}
+
+footer .navbar {
+  margin-bottom: 0;
+  min-height: 0;
+}
+
+footer .navbar-default {
+  background-color: transparent;
+  border: none;
+  margin-right: 40px;
+}
+
+footer .navbar-nav>li a {
+  padding-top: 0;
+  padding-bottom: 0;
+  text-decoration: underline;
+  color: #EEC856 !important;
+}
