@@ -4,10 +4,10 @@ var gulp = require('gulp'),
     sass = require('gulp-sass');
 
 var src = './app/process',
-    app = './builds/app';
+    app = './public';
 
 gulp.task('js', function() {
-  return gulp.src( src + '/app/app.js' )
+  return gulp.src( './app/app.js' )
     .pipe(browserify({
       transform: 'reactify',
       debug: true

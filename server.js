@@ -29,7 +29,7 @@ app.use(session({ secret: '#$%8909809890890sdafds98#$%$@@' })); // session secre
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
-require('./app/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
+require('./routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
 app.get('*', function (req, res) { res.redirect('/'); }); // catchall route
 
 app.listen(port);

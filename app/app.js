@@ -2,12 +2,11 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var _ = require('lodash');
 
-var NavbarComponent = require('./components/NavBarComponent');
-var MainComponent = require('./components/MainComponent');
-var FooterComponent = require('./components/FooterComponent');
+var NavbarComponent = require('./process/components/NavBarComponent');
+var MainComponent = require('./process/components/MainComponent');
+var FooterComponent = require('./process/components/FooterComponent');
 
 // load server in here...
-
 ReactDOM.render(
   <NavbarComponent 
     showUserName={true} />,
